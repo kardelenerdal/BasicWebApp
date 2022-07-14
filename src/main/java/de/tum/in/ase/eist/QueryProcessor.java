@@ -16,10 +16,18 @@ public class QueryProcessor {
             return "Kardelen";
         } else if (query.contains("largest")) {
             String[] parts = query.split(" ");
-            int num1 = Integer.parseInt(parts[parts.length - 1]);
-            String num2 = parts[parts.length - 2];
-            int num2int = Integer.parseInt(num2.substring(0, num2.length() - 1));
-            return Integer.toString(Math.max(num1, num2int));
+            int max = 0;
+            for (String x : parts) {
+                if (x.charAt(0) <= '9' && x.charAt(0) >= '0') {
+                    if (x.charAt(x.length() - 1) == ',') {
+                        x = x.substring(0, x.length() - 1);
+                    }
+                    if (Integer.parseInt(x) > max) {
+                        max = Integer.parseInt(x);
+                    }
+                }
+            }
+            return Integer.toString(max);
         } else if (query.contains("plus")) {
             String[] parts = query.split(" ");
             int num1 = Integer.parseInt(parts[2]);
