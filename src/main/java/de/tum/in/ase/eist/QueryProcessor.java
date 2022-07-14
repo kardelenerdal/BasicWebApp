@@ -1,7 +1,7 @@
 package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
-
+// kardelen
 @Service
 public class QueryProcessor {
 
