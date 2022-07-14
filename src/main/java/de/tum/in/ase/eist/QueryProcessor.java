@@ -84,6 +84,8 @@ public class QueryProcessor {
             return Integer.toString(res);
         } else if (query.contains("eiffel")) {
             return "Paris";
+        } else if (query.contains("banana")) {
+            return "yellow";
         } else {
             return "";
         }
